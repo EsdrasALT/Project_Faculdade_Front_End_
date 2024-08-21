@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exemplo 1</title>
+    <style>
+    button {
+        font-family: "helvetica neue", Helvetica, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        border: 2px solid green;
+        background: white;
+        color: orange;
+        box-shadow: 1px 1px 2px black;
+        border-radius: 10px;
+        padding: 3px 10px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <button> Jogador 1: Pedro</button>
+
+    <script src="exemplo3.html" defer>
+        let botao = document.querySelector("button");
+        
+        botao.addEventListener("click", atualizarNome);
+        
+        function atualizarNome(){
+            let nome = prompt ("Digite um novo nome");
+            if (nome!=null){
+                botao.textContent = "Jogador 1: " + nome;
+                alert("O nome sera alterado!");
+            }
+        
+        }
+        </script>
+</body>
+</html>
