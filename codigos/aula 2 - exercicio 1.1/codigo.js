@@ -1,4 +1,3 @@
-//declaração usando document. + referenciando os id
 let vencedor = document.getElementById("vencedor");
 let botaoChecar = document.querySelector("#botaoVerificar");
 let botaoLimpar = document.querySelector("#limparJogo");
@@ -23,7 +22,15 @@ botaoChecar.onclick = function(){
     if(resultados.indexOf(jog1) == -1 || resultados.indexOf(jog2) == -1){
         vencedor.textContent = "Jogo encerrado";
     } else if (jog1==jog2){
-        vencedor.textContent = "Jogo empatado!";
+        vencedor.textContent = "Jogo empatado!"; 
+    } else if (
+        (jog1 === 'pedra' && jog2 === 'tesoura') ||
+        (jog1 === 'papel' && jog2 === 'pedra') ||
+        (jog1 === 'tesoura' && jog2 === 'papel')
+    ) {        
+        vencedor.textContent = "Jogador 1 VENCE!"; 
+    } else {
+        vencedor.textContent = "Jogador 2 VENCE!"; 
     }
 
 }

@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo JoKenPo</title>
-    <link rel="stylesheets" href="estilos.css"/>
+    <link rel="stylesheet" href="estilos.css"/>
 </head>
 <body>
+    <div class="container">
+        <h1> Jogo Jokenpo</h1>    
+        <div>
+            <label>Player 1: </label>
+            <input id="jogador1" type="text"/>       
+        </div>  
 
-    <h1> Jogo Jokenpo</h1>    
-    <div class="espaçamento">
-        <label>Player 1: </label>
-        <input id="jogador1" type="text"/>       
-    </div>  
+        <div>
+            <label>Player 2: </label>
+            <input id="jogador2" type="text">    
+        </div>    
 
-    <div class="espaçamento">
-        <label>Player 2: </label>
-        <input id="jogador2" type="text">    
-    </div>    
+        <div>
+            <label id="vencedor">Vencedor: </label>
+        </div>    
 
-    <div class="espaçamento">
-        <label id="vencendor">Vencedor: </label>
-    </div>    
-
-    <div class="espaçamento">
-        <button id="botaoVerificar" type="button">Verificar Vencendor</button>
-        <button id="limparJogo" type="button">Limpar Jogo</button>
+        <div>
+            <button id="botaoVerificar" type="button">Verificar Vencedor</button>
+            <button id="limparJogo" type="button">Limpar Jogo</button>
+        </div>
     </div>
-
     <script src="codigo.js"></script>
 </body>
 </html>
