@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Login e Senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gerador de Login e Senha</h1>
+    <form id="formulario">
+        <label for="nome">Digite o seu nome completo:</label>
+        <input type="text" id="nome" placeholder="Ex: Jose Maria Alves dos Santos" required>
+        <button type="button" id="gerar">Gerar Login e Senha</button>
+        <button type="button" id="limpar">Limpar</button>
+    </form>
+    <div id="resultado">
+        <p id="login"></p>
+        <p id="senha"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
