@@ -14,10 +14,7 @@ botaoLimparCPF.onclick = limparCPF;
 
 botaoVerificarCPF.onclick = function(){
     let CPF_Digitado = document.querySelector("#CPF").value;
-    alert(typeof(CPF_Digitado));
-    let CPF = 0;
-    alert(typeof(CPF));
-    
+    let CPF = 0;    
 
     if (CPF_Digitado.length < 11){
         alert("Numeros faltando, CPF deve haver 11 caracteres");
@@ -30,7 +27,11 @@ botaoVerificarCPF.onclick = function(){
     }
 
     for(let i=0;i<CPF_Digitado.length;i++){
-        CPF = CPF_Digitado.char
+        CPF += CPF_Digitado.charCodeAt(i);
     }
+
+    alert(typeof(CPF));
+    alert(CPF);
+
 
 }
