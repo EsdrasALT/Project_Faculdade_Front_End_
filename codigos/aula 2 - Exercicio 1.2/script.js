@@ -1,5 +1,5 @@
 let botaoGerarSenha = document.querySelector("#botaoGerarSenha");
-let botaoLimparSenha = document.querySelector("#botaoLimparSenha");
+let botaoLimparSenha = document.querySelector("#Z");
 
 function limparSenha(){
     document.querySelector("#nome").value = "";
@@ -58,6 +58,7 @@ botaoGerarSenha.onclick = function(){
 
     for (let i =0;i<login.length;i++){
         let codigoAscii = login.charCodeAt(i);
+        alert(typeof(codigoAscii));
         senha += codigoAscii.toString()[0];
     }    
 
