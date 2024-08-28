@@ -14,7 +14,6 @@ botaoLimparCPF.onclick = limparCPF;
 
 botaoVerificarCPF.onclick = function(){
     let CPF_Digitado = document.querySelector("#CPF").value;
-    let CPF = 0;    
 
     if (CPF_Digitado.length < 11){
         alert("Numeros faltando, CPF deve haver 11 caracteres");
@@ -26,12 +25,24 @@ botaoVerificarCPF.onclick = function(){
         return;
     }
 
-    for(let i=0;i<CPF_Digitado.length;i++){
-        CPF += CPF_Digitado.charCodeAt(i);
+    for(let i=0; i<CPF_Digitado.length;i++){
+        if(CPF_Digitado.charCodeAt(i) < 48 || CPF_Digitado.charCodeAt(i) > 57){
+            alert("Não podem haver letras");
+        } 
     }
 
-    alert(typeof(CPF));
-    alert(CPF);
+    let soma = 0;
+    let cont = 1;
+    for(let i=1; i<=9;i++){        
+        soma += (cont * CPF_Digitado[i]);
+
+        alert(cont + "+" + CPF_Digitado[i] + "=" + soma);
+
+        cont++;
+    }
+
+
+
 
 
 }
