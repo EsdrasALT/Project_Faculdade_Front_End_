@@ -28,17 +28,32 @@ botaoVerificarCPF.onclick = function(){
     for(let i=0; i<CPF_Digitado.length;i++){
         if(CPF_Digitado.charCodeAt(i) < 48 || CPF_Digitado.charCodeAt(i) > 57){
             alert("Não podem haver letras");
+            return;
         } 
     }
 
-    let soma = 0;
-    let cont = 1;
-    for(let i=1; i<=9;i++){        
-        soma += (cont * CPF_Digitado[i]);
-
-        alert(cont + "+" + CPF_Digitado[i] + "=" + soma);
-
+    let CPF = 0;
+    CPF = CPF_Digitado;
+    let cont=1;
+    let decimoDigito=0;
+    for(let i=0; i<10;i++){        
+        decimoDigito += (cont * CPF[i]);
         cont++;
+    }
+
+    let primeiroDigitoVerificador = decimoDigito % 11;
+
+    if(primeiroDigitoVerificador == 10){
+        primeiroDigitoVerificador = 0;
+    }
+
+    alert(sizeof(CPF) + " - " + CPF);
+    let concat_CPF = Number(String(CPF) + String(primeiroDigitoVerificador));
+    alert(sizeof(concat_CPF) + " - " + concat_CPF);
+
+    let ultimoDigito=0;
+    for(let i=0;i<=10;i++){
+        ultimoDigito += (i * CPF[i]);
     }
 
 
