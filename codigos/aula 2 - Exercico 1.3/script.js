@@ -9,6 +9,7 @@ function limparCPF(){
 botaoLimparCPF.onclick = limparCPF;
 
 botaoVerificarCPF.onclick = function(){
+
     let CPF_Digitado = document.querySelector("#CPF").value;
 
     if (CPF_Digitado.length < 11){
@@ -17,6 +18,12 @@ botaoVerificarCPF.onclick = function(){
         return;
     } else if (CPF_Digitado.length >= 12){
         alert("Numero a mais, CPF deve haver 11 caracteres");
+        limparCPF();
+        return;
+    }
+
+    if (CPF_Digitado.indexOf(" ") != -1){
+        alert("Não deve espaço entre os numero do CPF");
         limparCPF();
         return;
     }
@@ -31,41 +38,30 @@ botaoVerificarCPF.onclick = function(){
 
     let CPF = 0;
     CPF = CPF_Digitado;
+
     let cont=1;
     let decimoDigito=0;
     for(let i=0; i<9;i++){        
-        decimoDigito += (cont * CPF[i]);
+        decimoDigito += (cont * parseInt(CPF[i], 10));
         cont++;
     }
 
-    alert("Multiplicação cont * cpf = " + decimoDigito);
     let primeiroDigitoVerificador = decimoDigito % 11;
-    alert("Resto da divisão por 11" + primeiroDigitoVerificador);
 
     if(primeiroDigitoVerificador == 10){
         primeiroDigitoVerificador = 0;
     }
 
-    alert("CPF digitado posição XXX.XXX.XXX.N: " + CPF[9]);
-    alert("CPF gerado: " + primeiroDigitoVerificador);
-
-    if(CPF[9] != primeiroDigitoVerificador){
+    if(parseInt(CPF[9], 10) != primeiroDigitoVerificador){
         alert("CPF Incorreto - O digito N do CPF não confere (XXX.XXX.XXX.N)")
         limparCPF();
         return;
     }
 
-    alert("verificar ultimo digito");
     let ultimoDigito=0;
     for(let i=0;i<10;i++){
         ultimoDigito += (i * CPF[i]);
-        alert(i + " * " + CPF[i] + " = " + ultimoDigito);
     }
-
-    // alert("Multiplicação cont * cpf = " + decimoDigito);
-    // alert("Resto da divisão por 11" + primeiroDigitoVerificador);
-    // alert("CPF digitado posição XXX.XXX.XXX.N: " + CPF[9]);
-    // alert("CPF gerado: " + primeiroDigitoVerificador);
 
     let segundoDigitoVerificador = ultimoDigito % 11;
 
@@ -73,18 +69,12 @@ botaoVerificarCPF.onclick = function(){
         segundoDigitoVerificador = 0;
     }
 
-    if(CPF[10] != segundoDigitoVerificador){
+    if(parseInt(CPF[10], 10) != segundoDigitoVerificador){
         alert("CPF Incorreto - O digito N do CPF não confere (XXX.XXX.XXX.XN)")
         limparCPF();
         return;
     }
+
+    document.getElementById("CPF_Digitado").textContent = "CPF digitado, esta valido e correto!";
     
-    //14538220620
-    //145.382.206-20
-
-
-
-
-
-
 }
