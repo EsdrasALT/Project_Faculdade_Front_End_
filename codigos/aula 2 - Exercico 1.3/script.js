@@ -8,10 +8,6 @@ function limparCPF(){
 
 botaoLimparCPF.onclick = limparCPF;
 
-// function validarCaracteres(char){
-//     return /^\d$/.test(char);
-// }
-
 botaoVerificarCPF.onclick = function(){
     let CPF_Digitado = document.querySelector("#CPF").value;
 
@@ -47,9 +43,8 @@ botaoVerificarCPF.onclick = function(){
         primeiroDigitoVerificador = 0;
     }
 
-    alert(sizeof(CPF) + " - " + CPF);
     let concat_CPF = Number(String(CPF) + String(primeiroDigitoVerificador));
-    alert(sizeof(concat_CPF) + " - " + concat_CPF);
+    alert(concat_CPF.toString().length + " - " + concat_CPF);
 
     let ultimoDigito=0;
     for(let i=0;i<=10;i++){
