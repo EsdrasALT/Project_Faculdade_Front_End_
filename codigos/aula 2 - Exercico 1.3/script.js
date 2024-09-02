@@ -36,6 +36,19 @@ botaoVerificarCPF.onclick = function(){
         } 
     }
 
+    let sameCPF = 0;
+    for(let i=0;i<CPF_Digitado.length;i++){
+        if(CPF_Digitado[i] == CPF_Digitado[i+1]){
+            sameCPF++
+        }
+    }
+
+    if(sameCPF == 10){
+        alert("O CPF digitado possui todos os numeros iguais");
+        limparCPF();
+        return;
+    }
+
     let CPF = 0;
     CPF = CPF_Digitado;
 
@@ -43,14 +56,18 @@ botaoVerificarCPF.onclick = function(){
     let decimoDigito=0;
     for(let i=0; i<9;i++){        
         decimoDigito += (cont * parseInt(CPF[i], 10));
+        // console.log(cont * parseInt(CPF[i], 10));
         cont++;
     }
+    // console.log(decimoDigito);
 
     let primeiroDigitoVerificador = decimoDigito % 11;
 
     if(primeiroDigitoVerificador == 10){
         primeiroDigitoVerificador = 0;
     }
+
+    // console.log(primeiroDigitoVerificador);
 
     if(parseInt(CPF[9], 10) != primeiroDigitoVerificador){
         alert("CPF Incorreto - O digito N do CPF não confere (XXX.XXX.XXX.N)")
@@ -61,7 +78,9 @@ botaoVerificarCPF.onclick = function(){
     let ultimoDigito=0;
     for(let i=0;i<10;i++){
         ultimoDigito += (i * CPF[i]);
+        console.log(i * CPF[i]);
     }
+    console.log(ultimoDigito);
 
     let segundoDigitoVerificador = ultimoDigito % 11;
 
@@ -69,12 +88,17 @@ botaoVerificarCPF.onclick = function(){
         segundoDigitoVerificador = 0;
     }
 
-    if(parseInt(CPF[10], 10) != segundoDigitoVerificador){
+    console.log(segundoDigitoVerificador);
+
+    // if(parseInt(CPF[10], 10) != segundoDigitoVerificador){
+    if(CPF[10] != segundoDigitoVerificador){
         alert("CPF Incorreto - O digito N do CPF não confere (XXX.XXX.XXX.XN)")
         limparCPF();
         return;
     }
 
     document.getElementById("CPF_Digitado").textContent = "CPF digitado, esta valido e correto!";
+
+    //14538220620
     
 }
