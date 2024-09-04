@@ -1,3 +1,4 @@
+
 let vencedor = document.getElementById("vencedor");
 let botaoChecar = document.querySelector("#botaoVerificar");
 let botaoLimpar = document.querySelector("#limparJogo");
