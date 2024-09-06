@@ -1,4 +1,5 @@
-let botaoCalcular = document.querySelector("#botaoCalcular");
+let botaoEnviar = document.querySelector("#botaoEnviar");
+let botaoGerar = document.querySelector("#botaoGerar");
 let botaoLimpar = document.querySelector("#botaoLimpar");
 
 function limparCampo(){
@@ -8,7 +9,7 @@ function limparCampo(){
 
 botaoLimpar.onclick = limparCampo;
 
-botaoCalcular.onclick = function () {
+botaoEnviar.onclick = function () {
     let nomeDigitado = document.querySelector("#nomeEmpregado").value;
     let nomeFuncionario = nomeDigitado.trim();
 
@@ -40,11 +41,10 @@ botaoCalcular.onclick = function () {
         alert("salario para mais de 400 peças: " + salario);
     }
 
-    
-
-
-
     alert("tudo certo por aqui!");
 
 }
 
+botaoGerar.onclick = function () {
+
+}
