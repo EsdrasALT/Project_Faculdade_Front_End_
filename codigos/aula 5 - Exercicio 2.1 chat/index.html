@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo de Salário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    .report {
+      margin-top: 20px;
+    }
+    .report li {
+      display: flex;
+      justify-content: space-between;
+      font-family: monospace;
+    }
+    .total, .average {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cadastro de Empregados</h1>
+
+  <form id="employeeForm">
+    <label for="name">Nome do Empregado:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="pieces">Número de Peças Fabricadas:</label>
+    <input type="number" id="pieces" name="pieces" min="1" required>
+
+    <button type="submit">Adicionar Empregado</button>
+  </form>
+
+  <div class="report">
+    <h2>Relatório</h2>
+    <ul id="employeeList"></ul>
+    <p class="total">Total pago com salários: R$ <span id="totalSalary">0.00</span></p>
+    <p class="average">Média dos salários: R$ <span id="averageSalary">0.00</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+    
