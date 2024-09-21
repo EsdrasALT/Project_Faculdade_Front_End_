@@ -1,0 +1,39 @@
+/* Ajuste para o relatório */
+#relatorio ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#relatorio ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+}
+
+#relatorio h4 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Ajuste para centralizar o relatório */
+#relatorio {
+    margin-top: 20px;
+}
+
+h4, li {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    #relatorio ul li {
+        font-size: 14px;
+        flex-direction: column;
+        text-align: left;
+    }
+}

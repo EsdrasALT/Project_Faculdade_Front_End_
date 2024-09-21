@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contas do Hotel</h1>
+
+    <div>
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" name="nome">
+    </div>
+
+    <div>
+        <label for="diaEntrada">Dia entrada: </label>
+        <input type="date" id="diaEntrada" name="diaEntrada">
+    </div>
+
+    <div>
+        <label for="diaSaida">Dia saida: </label>
+        <input type="date" id="diaSaida" name="diaSaida">
+    </div>
+
+    <div>
+        <label for="tipoQuarto">Tipo de quarto: </label>
+        <select id="tipoQuarto" name="tipoQuarto">
+            <option value="default">Escolha uma opção</option>
+            <option value="standard">Standard</option>
+            <option value="luxo">Luxo</option>
+            <option value="presidencial">Presidencial</option>            
+        </select>
+    </div>
+
+    <div>
+        <button id="botaoCalcular" type="button">Calcular</button>
+    </div>
+
+    <div id="relatorio">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
